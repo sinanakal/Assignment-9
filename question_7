@@ -1,0 +1,21 @@
+package Assignment_9;
+
+public class Question_7 {
+/*Write a program that will print out the first half of the word twice.
+
+Sample Output:
+
+     input: java
+     output: jaja
+*/
+	public static void main(String[] args) {
+
+		String word = "java";
+		String doubleHalf = "";
+		
+		doubleHalf=word.substring(0, word.length()/2);
+		System.out.println(doubleHalf+doubleHalf);
+
+	}
+
+}
