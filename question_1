@@ -1,0 +1,120 @@
+package Assignment_9;
+
+import java.util.Scanner;
+
+public class Question_1 {    //  repl.it -->090. Tip Calculator
+	/*Write your code inside the method.
+	Use the values given as method parameters.
+	Assign final values.
+	Then user should select service quality that will correspond to tip percent.
+	Poor = 5%
+	Fair = 10%
+	Good = 15%
+	Great = 20%
+	Excellent = 25% 
+	The program should display the following information based on the user input: 
+	Split or No split
+	Number of people entered: &&&&
+	Service Quality: 
+	Total to pay:
+	Total tip:
+	Total per person:
+	Tip per person:
+	https://itunes.apple.com/us/app/ihandy-tip-calculator/id324501526?mt=8
+
+	Input: 
+	Split:Yes
+	Number of people:4
+	Check amount:476.0
+	Service Quality:Excellent
+
+	Output:
+	 
+	Number of people entered: &&&&
+	Total to pay: 595.0
+	Total tip: 119.0
+	Total per person: 148.75
+	Tip per person: 29.75
+	*/
+
+	  public static void main(String[] args) {
+		    
+		  tipcalculator("Yes", 4, 476.0, "Excellent");
+		}
+		public static void tipcalculator(String isSplit,int numberOfPeople,double checkAmount,String serviceQuality) {
+			
+	Scanner scan = new Scanner(System.in);
+
+			System.out.println("Split:");
+			String split = scan.next();
+			if (split.equalsIgnoreCase("yes")) {
+
+				System.out.println("Number of people:");
+
+				 numberOfPeople = scan.nextInt();
+
+				
+
+				System.out.println("Check amount:");
+				double amount = scan.nextDouble();
+				
+
+				System.out.println("Service Quality:");
+			      serviceQuality = scan.next();
+
+				double totalTip = 0;
+
+				double totalPay = 0;
+				double totalPerPerson = 0;
+				double tipPerPerson = 0;
+
+				switch (serviceQuality.toLowerCase()) {
+
+				case "poor":
+					totalTip = (amount * 0.05);
+					totalPay = (totalTip + amount);
+					totalPerPerson = (totalPay / numberOfPeople);
+					tipPerPerson = (totalTip / numberOfPeople);
+					break;
+				case "fair":
+					totalTip = (amount + 0.1);
+					totalPay = (totalTip + amount);
+					totalPerPerson = (totalPay / numberOfPeople);
+					tipPerPerson = (totalTip / numberOfPeople);
+					break;
+				case "good":
+					totalTip = (amount * 0.15);
+					totalPay = (totalTip + amount);
+					totalPerPerson = (totalPay / numberOfPeople);
+					tipPerPerson = (totalTip / numberOfPeople);
+					break;
+				case "great":
+					totalTip = (amount * 0.20);
+					totalPay = (totalTip + amount);
+					totalPerPerson = (totalPay / numberOfPeople);
+					tipPerPerson = (totalTip / numberOfPeople);
+					break;
+				case "excellent":
+					totalTip = (amount * 0.25);
+					totalPay = (totalTip + amount);
+					totalPerPerson = (totalPay / numberOfPeople);
+					tipPerPerson = (totalTip / numberOfPeople);
+
+				}
+				String numberOFPeople1="";
+				for (int i = 0; i < numberOfPeople; i++) {
+					
+					numberOFPeople1+="&";
+					
+				}
+
+				System.out.println("Number of people entered: " + numberOFPeople1);
+				System.out.println("Total to pay: " + totalPay);
+				System.out.println("Total tip: " + totalTip);
+				System.out.println("Total per person: " + totalPerPerson);
+				System.out.println("Tip per person: " + tipPerPerson);
+			}
+
+		}
+
+	}
